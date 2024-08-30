@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sriyog/Screens/stats.dart';
 
 class BNavigationBar extends StatefulWidget {
   const BNavigationBar({super.key});
@@ -8,16 +9,79 @@ class BNavigationBar extends StatefulWidget {
 }
 
 class _BNavigationBarState extends State<BNavigationBar> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar:
-          BottomNavigationBar(items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-      ]),
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: const [
+          Stats(),
+          Stats(),
+          Stats(),
+          Stats(),
+          Stats(),
+        ],
+      ),
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+            border: Border(top: BorderSide(color: Colors.black))),
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          items: const [
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage("images/home.png"),
+                size: 35,
+                color: Colors.black,
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage("images/phone.png"),
+                size: 35,
+                color: Colors.black,
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage("images/whatsapp.png"),
+                size: 35,
+                color: Colors.black,
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage("images/email.png"),
+                size: 35,
+                color: Colors.black,
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage("images/checkmark.png"),
+                size: 35,
+                color: Colors.black,
+              ),
+              label: '',
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.green,
+          onTap: _onItemTapped,
+        ),
+      ),
     );
   }
 }

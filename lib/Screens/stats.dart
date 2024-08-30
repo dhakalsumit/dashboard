@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Stats extends StatefulWidget {
   const Stats({super.key});
@@ -27,7 +28,7 @@ class _StatsState extends State<Stats> {
             image: AssetImage(
               "images/sriyog.png",
             ),
-            height: 30,
+            height: 31.5,
           ),
           SizedBox(
             width: 60,
@@ -35,25 +36,34 @@ class _StatsState extends State<Stats> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Divider(
               color: Colors.black,
             ),
-            const Row(
+            Row(
               children: [
                 Text(
                   "Dashboard",
                   textAlign: TextAlign.start,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+                  // style:  TextStyle(fontSize: 20, fontWeight: FontWeight.w400,),
+                  style: GoogleFonts.museoModerno(
+                    textStyle: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black),
+                  ),
                 ),
-                Spacer(),
-                Text(
+                const Spacer(),
+                const Text(
                   "17 August 2024 | 11:20 AM",
                   textAlign: TextAlign.start,
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
               ],
             ),
@@ -66,11 +76,11 @@ class _StatsState extends State<Stats> {
               height: 30,
             ),
             SizedBox(
-              height: 400,
+              height: 430,
               child: ListView.builder(
                 itemCount: 7,
                 itemBuilder: (BuildContext context, int index) {
-                  return const Column(
+                  return Column(
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -79,32 +89,35 @@ class _StatsState extends State<Stats> {
                           Text(
                             "28936",
                             style: TextStyle(
-                                fontSize: 25,
-                                color: Color.fromARGB(196, 14, 14, 14)),
+                                fontSize: 23,
+                                color: index % 2 != 0
+                                    ? Colors.grey
+                                    : const Color.fromARGB(196, 14, 14, 14)),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 25,
                           ),
                           Text("Unverified Pro",
                               style: TextStyle(
-                                  fontSize: 25,
-                                  color: Color.fromARGB(197, 14, 14, 14))),
+                                  fontSize: 23,
+                                  color: index % 2 != 0
+                                      ? Colors.grey
+                                      : const Color.fromARGB(196, 14, 14, 14))),
                         ],
                       ),
-                      SizedBox(
-                        height: 20,
+                      const SizedBox(
+                        height: 30,
                       )
                     ],
                   );
                 },
               ),
             ),
-            const SizedBox(
-              height: 20,
+            const Image(
+              image: AssetImage("images/line.png"),
+              height: 30,
             ),
-            const Divider(
-              color: Colors.black,
-            )
+            Spacer(),
           ],
         ),
       ),
