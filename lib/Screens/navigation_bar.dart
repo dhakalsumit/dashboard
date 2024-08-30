@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sriyog/Screens/chart%20screens/city_chart.dart';
 import 'package:sriyog/Screens/stats.dart';
+import 'package:sriyog/Screens/unverified.dart';
 
 class BNavigationBar extends StatefulWidget {
   const BNavigationBar({super.key});
@@ -24,8 +26,8 @@ class _BNavigationBarState extends State<BNavigationBar> {
         index: _selectedIndex,
         children: const [
           Stats(),
-          Stats(),
-          Stats(),
+          CityChart(),
+          Unverified(),
           Stats(),
           Stats(),
         ],

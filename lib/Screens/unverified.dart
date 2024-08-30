@@ -56,7 +56,7 @@ class _UnverifiedState extends State<Unverified> {
                 ),
               ],
             ),
-            SizedBox(
+           const SizedBox(
               height: 30,
             ),
             const Text(
@@ -68,7 +68,7 @@ class _UnverifiedState extends State<Unverified> {
               height: 30,
             ),
             SizedBox(
-              height: 400,
+              height: 420,
               child: ListView.builder(
                 itemCount: 7,
                 itemBuilder: (BuildContext context, int index) {
@@ -78,6 +78,7 @@ class _UnverifiedState extends State<Unverified> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
+                          
                           const Text(
                             "28936",
                             style: TextStyle(
@@ -106,12 +107,6 @@ class _UnverifiedState extends State<Unverified> {
                 },
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Divider(
-              color: Colors.black,
-            )
           ],
         ),
       ),

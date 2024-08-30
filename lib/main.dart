@@ -22,6 +22,6 @@ class MyApp extends StatelessWidget {
               seedColor: const Color.fromARGB(255, 58, 183, 98)),
           useMaterial3: true,
         ),
-        home: const CityChart());
+        home: const BNavigationBar());
   }
 }

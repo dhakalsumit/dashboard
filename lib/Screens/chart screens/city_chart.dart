@@ -66,28 +66,41 @@ class _CityChartState extends State<CityChart> {
               //     return const DropdownMenuItem<dynamic>(child: Text("Hello"));
               //   })
               // ], onChanged: (index) {}),
-              SizedBox(
-                height: 40,
-                child: FormBuilderDropdown(
-                  decoration: InputDecoration(
-                    labelText: 'Select an Option',
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.transparent,
+                      border: Border.all(color: Colors.black)),
+                  height: 50,
+                  child: FormBuilderDropdown(
+                    iconSize: 60,
+                    decoration: const InputDecoration(
+                      contentPadding: EdgeInsets.only(top: 15, left: 40),
+                      border: InputBorder.none,
+                      labelText: 'User Type',
+                    ),
+                    name: "name",
+                    items: const [
+                      DropdownMenuItem(
+                        value: 'Option 1',
+                        child: Text('Option 1'),
+                      ),
+                      DropdownMenuItem(
+                        value: 'Option 2',
+                        child: Text('Option 2'),
+                      ),
+                      DropdownMenuItem(
+                        value: 'Option 3',
+                        child: Text('Option 3'),
+                      ),
+                    ],
                   ),
-                  name: "name",
-                  items: const [
-                    DropdownMenuItem(
-                      value: 'Option 1',
-                      child: Text('Option 1'),
-                    ),
-                    DropdownMenuItem(
-                      value: 'Option 2',
-                      child: Text('Option 2'),
-                    ),
-                    DropdownMenuItem(
-                      value: 'Option 3',
-                      child: Text('Option 3'),
-                    ),
-                  ],
                 ),
+              ),
+              SizedBox(
+                height: 50,
               ),
               SizedBox(
                 height: 300,

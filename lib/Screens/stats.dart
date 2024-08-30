@@ -90,9 +90,7 @@ class _StatsState extends State<Stats> {
                             "28936",
                             style: TextStyle(
                                 fontSize: 23,
-                                color: index % 2 != 0
-                                    ? Colors.grey
-                                    : const Color.fromARGB(196, 14, 14, 14)),
+                                color: const Color.fromARGB(196, 14, 14, 14)),
                           ),
                           const SizedBox(
                             width: 25,
