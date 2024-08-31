@@ -80,7 +80,7 @@ class _StatsState extends State<Stats> {
               child: ListView.builder(
                 itemCount: 7,
                 itemBuilder: (BuildContext context, int index) {
-                  return Column(
+                  return const Column(
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -90,20 +90,18 @@ class _StatsState extends State<Stats> {
                             "28936",
                             style: TextStyle(
                                 fontSize: 23,
-                                color: const Color.fromARGB(196, 14, 14, 14)),
+                                color: Color.fromARGB(196, 14, 14, 14)),
                           ),
-                          const SizedBox(
+                          SizedBox(
                             width: 25,
                           ),
                           Text("Unverified Pro",
                               style: TextStyle(
                                   fontSize: 23,
-                                  color: index % 2 != 0
-                                      ? Colors.grey
-                                      : const Color.fromARGB(196, 14, 14, 14))),
+                                  color: Color.fromARGB(196, 14, 14, 14))),
                         ],
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 30,
                       )
                     ],

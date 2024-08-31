@@ -56,7 +56,7 @@ class _UnverifiedState extends State<Unverified> {
                 ),
               ],
             ),
-           const SizedBox(
+            const SizedBox(
               height: 30,
             ),
             const Text(
@@ -68,39 +68,48 @@ class _UnverifiedState extends State<Unverified> {
               height: 30,
             ),
             SizedBox(
-              height: 420,
+              height: 440,
               child: ListView.builder(
-                itemCount: 7,
+                itemCount: 9,
                 itemBuilder: (BuildContext context, int index) {
                   return Column(
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          
-                          const Text(
-                            "28936",
-                            style: TextStyle(
-                                fontSize: 20,
-                                color: Color.fromARGB(196, 14, 14, 14)),
+                      Container(
+                        height: 50,
+                        width: double.infinity,
+                        color: index % 2 != 0
+                            ? const Color.fromARGB(255, 217, 217, 217)
+                            : Colors.transparent,
+                        child: Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const Text(
+                                "28936",
+                                style: TextStyle(
+                                    fontSize: 19,
+                                    color: Color.fromARGB(196, 14, 14, 14)),
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              const Text("Bhim Bahadur Shrestha",
+                                  style: TextStyle(
+                                      fontSize: 19,
+                                      color: Color.fromARGB(197, 14, 14, 14))),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              IconButton(
+                                  onPressed: () {}, icon: Icon(Icons.settings))
+                            ],
                           ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          const Text("Bhim Bahadur Shrestha",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  color: Color.fromARGB(197, 14, 14, 14))),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          IconButton(
-                              onPressed: () {}, icon: Icon(Icons.settings))
-                        ],
+                        ),
                       ),
                       const SizedBox(
-                        height: 20,
+                        height: 5,
                       )
                     ],
                   );

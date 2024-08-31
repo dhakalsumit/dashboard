@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sriyog/Screens/chart%20screens/city_chart.dart';
+import 'package:sriyog/Screens/next_page.dart';
 import 'package:sriyog/Screens/stats.dart';
 import 'package:sriyog/Screens/unverified.dart';
+import 'package:sriyog/Screens/user_profile.dart';
 
 class BNavigationBar extends StatefulWidget {
   const BNavigationBar({super.key});
@@ -24,12 +26,12 @@ class _BNavigationBarState extends State<BNavigationBar> {
     return Scaffold(
       body: IndexedStack(
         index: _selectedIndex,
-        children: const [
-          Stats(),
-          CityChart(),
-          Unverified(),
-          Stats(),
-          Stats(),
+        children: [
+          const Stats(),
+          const CityChart(),
+          const Unverified(),
+          UserProfile(),
+          const NextPage(),
         ],
       ),
       bottomNavigationBar: Container(
