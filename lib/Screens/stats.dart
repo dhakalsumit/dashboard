@@ -26,7 +26,7 @@ class _StatsState extends State<Stats> {
           ),
           Image(
             image: AssetImage(
-              "images/sriyog.png",
+              "images/sriyog.png ",
             ),
             height: 31.5,
           ),
